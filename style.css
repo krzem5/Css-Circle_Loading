@@ -1,0 +1,124 @@
+body{
+	background: #ddd;
+	margin: 0;
+	padding: 0;
+	--dist: 141.5px;
+}
+.load{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	margin: 0;
+	padding: 0;
+	width: calc(2.5*var(--dist));
+	height: calc(2.5*var(--dist))
+}
+.load *,.load{
+	user-select: none;
+}
+.load>span{
+	position: absolute;
+	width: 400px;
+	height: 200px;
+	border-top-left-radius: 400px;
+	border-top-right-radius: 400px;
+	transform-origin: center bottom;
+	opacity: 0.5;
+}
+.load>span:nth-child(1){
+	top: var(--dist);
+	left: var(--dist);
+	transform: rotate(45deg);
+	animation: A 1s ease-in-out infinite alternate;
+	background: #f42c43;
+}
+.load>span:nth-child(2){
+	left: calc(-1*var(--dist));
+	top: calc(-1*var(--dist));
+	transform: rotate(225deg);
+	animation: B 1s ease-in-out infinite alternate;
+	background: #0feb0f;
+}
+.load>span:nth-child(3){
+	top: calc(-1*var(--dist));
+	left: var(--dist);
+	transform: rotate(315deg);
+	animation: C 1s ease-in-out infinite alternate;
+	background: #00c6ff;
+}
+.load>span:nth-child(4){
+	top: var(--dist);
+	left: calc(-1*var(--dist));
+	transform: rotate(135deg);
+	animation: D 1s ease-in-out infinite alternate;
+	background: #ffe600;
+}
+@keyframes A{
+	0%,25%{
+		top: var(--dist);
+		left: var(--dist);
+		transform: rotate(45deg);
+	}
+	50%{
+		top: 0px;
+		left: 0px;
+		transform: rotate(90deg);
+	}
+	75%,100%{
+		top: calc(-1*var(--dist));
+		left: var(--dist);
+		transform: rotate(135deg);
+	}
+}
+@keyframes B{
+	0%,25%{
+		top: calc(-1*var(--dist));
+		left: calc(-1*var(--dist));
+		transform: rotate(225deg);
+	}
+	50%{
+		top: 0px;
+		left: 0px;
+		transform: rotate(270deg);
+	}
+	75%,100%{
+		top: var(--dist);
+		left: calc(-1*var(--dist));
+		transform: rotate(315deg);
+	}
+}
+@keyframes C{
+	0%,25%{
+		left: var(--dist);
+		top: calc(-1*var(--dist));
+		transform: rotate(315deg);
+	}
+	50%{
+		top: 0px;
+		left: 0px;
+		transform: rotate(270deg);
+	}
+	75%,100%{
+		top: var(--dist);
+		left: var(--dist);
+		transform: rotate(225deg);
+	}
+}
+@keyframes D{
+	0%,25%{
+		top: var(--dist);
+		left: calc(-1*var(--dist));
+		transform: rotate(135deg);
+	}
+	50%{
+		top: 0px;
+		left: 0px;
+		transform: rotate(90deg);
+	}
+	75%,100%{
+		top: calc(-1*var(--dist));
+		left: calc(-1*var(--dist));
+		transform: rotate(45deg);
+	}
+}
